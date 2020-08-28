@@ -1,0 +1,6 @@
+[submodule "rssht_controller_lib"]
+	path = lib/rssht_controller_lib
+	url = https://github.com/guallo/remote-ssh-tunnel-controller-lib.git
+[submodule "fpbx_client_lib"]
+	path = lib/fpbx_client_lib
+	url = https://github.com/guallo/fusionpbx-client-lib.git

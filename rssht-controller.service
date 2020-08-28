@@ -1,0 +1,14 @@
+[Unit]
+Description=Remote SSH Tunnel Controller Service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/home/rssht-controller-service/remote-ssh-tunnel-controller-service/rssht-controller-service.pid
+ExecStart=/home/rssht-controller-service/remote-ssh-tunnel-controller-service/__main__.py --daemonize
+Restart=always
+User=rssht-controller-service
+
+[Install]
+WantedBy=multi-user.target
