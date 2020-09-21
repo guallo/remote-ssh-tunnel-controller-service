@@ -33,9 +33,9 @@ tar xzf geckodriver-v0.26.0-linux64.tar.gz
 
 mkdir -p $HOME/.ssh
 ssh-keygen -C rssht-controller-service -N "" -f id_rsa
-ssh-copy-id -i id_rsa.pub rssht-server@<INTERMEDIATE-SSH-SERVER> -p 443
+ssh-copy-id -i id_rsa.pub rssht-server@<SSH-SERVER> -p 443
 
-sed -i 's!\(RSSHT_SERVER_ADDR = \).*$!\1"<INTERMEDIATE-SSH-SERVER>"!' lib/rssht_controller_lib/config.py
+sed -i 's!\(RSSHT_SERVER_ADDR = \).*$!\1"<SSH-SERVER>"!' lib/rssht_controller_lib/config.py
 sed -i 's!\(KEY_FILENAME = \).*$!\1os.path.join(LIB_DIR, os.pardir, os.pardir, "id_rsa")!' lib/rssht_controller_lib/config.py
 
 sed -i 's!\(CHECK_INTERVAL = \).*$!\1<CHECK-INTERVAL>!' rssht_controller_service/config.py
